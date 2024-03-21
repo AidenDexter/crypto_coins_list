@@ -1,4 +1,4 @@
-# crypto_coints_list
+# crypto_coins_list
 
 A new Flutter project.
 

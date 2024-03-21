@@ -1,4 +1,4 @@
-package com.example.crypto_coints_list
+package com.example.crypto_coins_list
 
 import io.flutter.embedding.android.FlutterActivity
 
