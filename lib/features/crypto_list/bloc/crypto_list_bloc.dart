@@ -20,7 +20,7 @@ class CryptoListBloc extends Bloc<CryptoListEvent, CryptoListState> {
         }
         final coinsList = await coinsRepository.getCoinsList();
         emit(CryptoListLoaded(coinsList: coinsList));
-      } catch (e,  ) {
+      } catch (e, st) {
         emit(CryptoListLoadingFailure(exception: e));
         // GetIt.I<Talker>().handle(e, st);
       } finally {
