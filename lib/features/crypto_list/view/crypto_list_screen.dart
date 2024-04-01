@@ -1,11 +1,11 @@
 import 'dart:async';
-
 import 'package:crypto_coins_list/features/crypto_list/bloc/crypto_list_bloc.dart';
 import 'package:crypto_coins_list/repositories/crypto_coins/crypto_coins.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 
+import '../../bloc/crypto_list_bloc.dart';
 import '../widgets/crypto_coin_tile.dart';
 
 class CryptoListScreen extends StatefulWidget {
@@ -18,12 +18,14 @@ class CryptoListScreen extends StatefulWidget {
 }
 
 class _CryptoListScreenState extends State<CryptoListScreen> {
+
   final _cryptoListBloc = CryptoListBloc(GetIt.I<AbstractCoinsRepository>());
 
   @override
   void initState() {
     // _cryptoListBloc.loadCryptoCoins();
     _cryptoListBloc.add(LoadCryptoList());
+
     super.initState();
   }
 
@@ -31,6 +33,7 @@ class _CryptoListScreenState extends State<CryptoListScreen> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Scaffold(
+
       appBar: AppBar(
         centerTitle: true,
         title: const Text('CryptoCurrenciesList'),
@@ -65,6 +68,7 @@ class _CryptoListScreenState extends State<CryptoListScreen> {
                         'Something went wrong',
                         style: theme.textTheme.headlineMedium?.copyWith(color: Colors.white),
                       ),
+
                       Text(
                         'Please try again later',
                         style: theme.textTheme.labelSmall?.copyWith(fontSize: 16),
@@ -78,6 +82,7 @@ class _CryptoListScreenState extends State<CryptoListScreen> {
                         },
                         child: const Text('Try again!'),
                       ),
+
                     ],
                   ),
                 );
@@ -85,6 +90,7 @@ class _CryptoListScreenState extends State<CryptoListScreen> {
               return const Center(child: CircularProgressIndicator());
             },
           ),
+
         ),
       ),
     );

@@ -1,3 +1,4 @@
+import 'package:crypto_coins_list/repositories/crypto_coins/models/crypto_coin.dart';
 import 'package:flutter/material.dart';
 
 import '../../../repositories/crypto_coins/models/crypto_coin.dart';
@@ -27,7 +28,7 @@ class CryptoCoinTile extends StatelessWidget {
         width: 30,
       ),
       title: Text(
-        '${coin.name} ',
+        coin.name,
         style: theme.textTheme.bodyMedium,
       ),
       subtitle: Text(
