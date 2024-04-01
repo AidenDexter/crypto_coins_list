@@ -12,7 +12,6 @@ void main() async {
   final app = await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  print("ProjectId ${app.options.projectId}");
   // final talker = TalkerFlutter.init();
 
   // GetIt.I.registerSingleton(talker);
